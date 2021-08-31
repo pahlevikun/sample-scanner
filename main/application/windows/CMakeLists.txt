@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(moslem_app LANGUAGES CXX)
 
-set(BINARY_NAME "moslem_app")
+set(BINARY_NAME "Pomodoro")
 
 cmake_policy(SET CMP0063 NEW)
 

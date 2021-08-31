@@ -8,7 +8,7 @@ mixin _HomeDispatcher {
       context,
       PathIdentifier.HOME,
       clearStack: true,
-      transition: TransitionType.material,
+      transition: TransitionType.native,
     );
   }
 }

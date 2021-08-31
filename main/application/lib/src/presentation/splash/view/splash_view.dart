@@ -22,7 +22,7 @@ class _SplashViewState extends State<SplashView> {
       child: Container(
         width: double.infinity,
         height: double.infinity,
-        color: ColorManifest.BACKGROUND.toColor(),
+        color: ColorManifest.PRIMARY.toColor(),
       ),
     );
   }

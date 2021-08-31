@@ -16,7 +16,10 @@ class _BackdropUpperLayerState extends State<BackdropUpperLayer> {
       width: double.infinity,
       height: double.infinity,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(DimensionsManifest.UNIT_32),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(DimensionsManifest.UNIT_32),
+          topRight: Radius.circular(DimensionsManifest.UNIT_32),
+        ),
         child: Container(
           color: ColorManifest.WHITE.toColor(),
           padding: EdgeInsets.only(

@@ -1,6 +1,6 @@
 {
-    "name": "moslem_app",
-    "short_name": "moslem_app",
+    "name": "Pomodoro",
+    "short_name": "Pomodoro",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -38,9 +38,11 @@ class _MobileAppState extends State<MobileApp> {
   Widget build(BuildContext context) {
     _initOnBuild(context);
     return MaterialApp(
+      color: ColorManifest.PRIMARY.toColor(),
+      initialRoute: PathIdentifier.SPLASH,
       debugShowCheckedModeBanner: BuildConfig.DEBUG,
       navigatorKey: _alice.getNavigatorKey(),
-      home: mainProduct.defaultPage.registerPage({}),
+      // home: mainProduct.defaultPage.registerPage({}),
       onGenerateRoute: _route.router.generator,
     );
   }
