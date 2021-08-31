@@ -1,5 +1,5 @@
-name: moslem_app
-description: Moslem app Flutter multiplatform project.
+name: Pomodoro
+description: Pomodoro Flutter multiplatform project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -35,22 +35,20 @@ dependencies:
     path: ../../module_shared/shared_utilities
   shared_launcher:
     path: ../../module_shared/shared_launcher
-  shared_router:
-    path: ../../module_shared/shared_router
+  shared_widget_bottom_nav:
+    path: ../../module_shared/shared_widget_bottom_nav
+  shared_widget_bottom_sheet:
+    path: ../../module_shared/shared_widget_bottom_sheet
   lib_network:
     path: ../../module_library/lib_network
   lib_event:
     path: ../../module_library/lib_event
   lib_storage_auth_token:
     path: ../../module_library/lib_storage_auth_token
-  product_splash:
-    path: ../../module_product/product_splash
-  product_authentication:
-    path: ../../module_product/product_authentication
-  main_product_registry:
-    path: ../../main/main_product_registry
 
   alice: ^0.2.3
+  freezed: ^0.14.1
+  fluro: ^2.0.3
 
 dependency_overrides:
   async: '2.7.0'
@@ -60,6 +58,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_native_splash: ^1.2.1
+  build_runner: ^2.1.0
+  injectable_generator:
 
 flutter_native_splash:
   color: "#2F6690"
