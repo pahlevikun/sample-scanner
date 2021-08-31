@@ -3,6 +3,8 @@ import 'package:foundation_injector/foundation_injector.dart';
 
 import 'index.dart';
 
+import 'router_module.config.dart';
+
 @module
 abstract class RouterModule {
   @Singleton()

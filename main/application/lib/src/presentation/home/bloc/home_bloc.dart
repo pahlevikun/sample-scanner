@@ -1,9 +1,9 @@
 import 'dart:async';
 
+import 'package:Pomodoro/src/presentation/home/model/model.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:foundation_injector/foundation_injector.dart';
-import 'package:application/lib/src/presentation/home/home.dart';
 
 part 'home_event.dart';
 

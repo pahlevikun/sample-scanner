@@ -2,6 +2,8 @@ library product_menu_holder;
 
 import 'index.dart';
 
+import 'product_main_application.config.dart';
+
 class MainApplicationProduct implements Product {
   @override
   ProductIdentifier productId = ProductIdentifier.MAIN_APPLICATION;
