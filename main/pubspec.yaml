@@ -1,0 +1,45 @@
+name: Scanner
+description: Sample Scanner Flutter project.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  foundation_injector:
+    path: ../module_foundation/foundation_injector
+  shared_manifest:
+    path: ../module_shared/shared_manifest
+  shared_utilities:
+    path: ../module_shared/shared_utilities
+  shared_storage:
+    path: ../module_shared/shared_storage
+
+  freezed: ^0.14.1
+  fluro: ^2.0.3
+  google_fonts: ^2.1.0
+  lottie: ^1.1.0
+
+dependency_overrides:
+  async: '2.7.0'
+  path: '1.8.0'
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_native_splash: ^1.2.1
+  build_runner: ^2.1.0
+  injectable_generator:
+
+flutter_native_splash:
+  color: "#2F6690"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - resources/raw/

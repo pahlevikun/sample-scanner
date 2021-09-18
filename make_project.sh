@@ -1,28 +1,17 @@
-APP_DIRECTORY="$(dirname "$0")/app"
+APP_DIRECTORY="$(dirname "$0")/main"
 cd "$APP_DIRECTORY"
 echo "Do cleaning root project on app..."
 fvm flutter clean
 
 ## declare array variables
-declare -a generator=("assets" "language")
-declare -a module_shared=("shared_extensions" "shared_launcher" "shared_manifest" "shared_storage" "shared_utilities" "shared_widget_common" "shared_widget_bottom_nav")
-declare -a module_foundation=("foundation_authenticator" "foundation_identifiers" "foundation_injector")
-declare -a module_library=("lib_event" "lib_network" "lib_storage_auth_token")
-declare -a module_product=()
-declare -a module_main=("application")
-
-for item in "${generator[@]}"; do
-  DIRECTORY="$(dirname "$0")/generator/$item"
-  cd "$DIRECTORY"
-  dart pub get
-done
+declare -a module_shared=("shared_extensions" "shared_manifest" "shared_storage" "shared_utilities" "shared_widget_common")
+declare -a module_foundation=("foundation_identifiers")
 
 for item in "${module_foundation[@]}"; do
   DIRECTORY="$(dirname "$0")/module_foundation/$item"
   cd "$DIRECTORY"
   echo "$DIRECTORY"
   fvm flutter pub get
-  fvm flutter pub run build_runner build --delete-conflicting-outputs
 done
 
 for item in "${module_shared[@]}"; do
@@ -45,21 +34,11 @@ for item in "${module_library[@]}"; do
   fvm flutter pub run build_runner build --delete-conflicting-outputs
 done
 
-for item in "${module_product[@]}"; do
-  DIRECTORY="$(dirname "$0")/module_product/$item"
-  cd "$DIRECTORY"
-  echo "$DIRECTORY"
-  fvm flutter pub get
-  fvm flutter pub run build_runner build --delete-conflicting-outputs
-done
-
-for item in "${module_main[@]}"; do
-  DIRECTORY="$(dirname "$0")/main/$item"
-  cd "$DIRECTORY"
-  echo "$DIRECTORY"
-  fvm flutter pub get
-  fvm flutter pub run build_runner build --delete-conflicting-outputs
-done
+DIRECTORY="$(dirname "$0")/main"
+cd "$DIRECTORY"
+echo "$DIRECTORY"
+fvm flutter pub get
+fvm flutter pub run build_runner build --delete-conflicting-outputs
 
 echo ""
 echo "Make project finished"

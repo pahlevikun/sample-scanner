@@ -12,26 +12,12 @@ dependencies:
   flutter:
     sdk: flutter
 
-builders:
-  assets_generator:
-    path: ../../generator/assets_generator
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  assets_generator:
-    path: ../../generator/assets_generator
-  language:
-    path: ../../generator/language
 
 dependency_overrides:
   path: '1.8.0'
 
 flutter:
   uses-material-design: true
-  assets:
-    - ../../resources/image/
-
-assets_generator:
-  output: "lib/src/assets_generated_manifest.dart"
-  package: "shared_manifest"
