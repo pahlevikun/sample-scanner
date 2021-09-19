@@ -9,22 +9,24 @@ abstract class UserStorageRepository {
 }
 
 class UserStorageRepositoryDelegate implements UserStorageRepository {
-  final _storageService = Injector.instance<StorageManager>();
+  final StorageManager _storageManager;
+
+  UserStorageRepositoryDelegate(this._storageManager);
 
   static const String KEY_TOKEN = "${BuildConfig.APP_ID}.pref.user.token";
 
   @override
   void deleteUserToken() {
-    _storageService.removeFromDisk(KEY_TOKEN);
+    _storageManager.removeFromDisk(KEY_TOKEN);
   }
 
   @override
   String getUserToken() {
-    return _storageService.getFromDisk(KEY_TOKEN) ?? '';
+    return _storageManager.getFromDisk(KEY_TOKEN) ?? '';
   }
 
   @override
   void saveUserToken(String token) {
-    _storageService.saveToDisk(KEY_TOKEN, token);
+    _storageManager.saveToDisk(KEY_TOKEN, token);
   }
 }

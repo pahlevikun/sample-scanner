@@ -13,7 +13,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return SizeConfigBuilder(
-      builder: (context, orientation, deviceType) => Scaffold(
+      builder: (context, orientation) => Scaffold(
         backgroundColor: ColorManifest.BACKGROUND.toColor(),
         body: Container(
           child: BlocProvider(

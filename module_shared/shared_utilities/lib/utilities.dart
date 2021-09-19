@@ -27,4 +27,3 @@ export 'src/view/custom_clipper.dart' show ClipPainter;
 export 'src/view/hex_color.dart' show HexColor, HexColorExt;
 export 'src/view/hideable_glow_behavior.dart' show HideableGlowBehavior;
 export 'src/widget/restart_widget.dart' show RestartWidget;
-export 'src/common/sizer2/sizer.dart' show Sizer, SizerUtil, SizerExt;

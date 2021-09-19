@@ -12,9 +12,11 @@ class UserFormPage extends StatefulWidget {
 class _UserFormPageState extends State<UserFormPage> {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => Injector.instance<UserFormBloc>()..add(UserFormInit()),
-      child: UserFormView(),
+    return Scaffold(
+      body: BlocProvider(
+        create: (context) => Injector.instance<UserFormBloc>()..add(UserFormInit()),
+        child: UserFormView(),
+      ),
     );
   }
 }

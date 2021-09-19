@@ -17,7 +17,7 @@ class _SplashViewState extends State<SplashView> {
       listener: (context, state) {
         if (state.action is SessionValid) {
           Injector.instance<NavigationDispatcher>().goToHome(context);
-        } else {
+        } else if (state.action is SessionInValid) {
           Injector.instance<NavigationDispatcher>().goToForm(context);
         }
       },

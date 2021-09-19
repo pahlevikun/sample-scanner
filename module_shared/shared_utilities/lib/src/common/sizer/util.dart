@@ -1,4 +1,4 @@
-part of sizer;
+part of 'size_config.dart';
 
 class SizerUtil {
   /// Device's BoxConstraints
@@ -35,17 +35,5 @@ class SizerUtil {
       height = boxConstraints.maxWidth;
     }
 
-    // Sets ScreenType
-    if ((orientation == Orientation.portrait && width < 600) ||
-        (orientation == Orientation.landscape && height < 600)) {
-      deviceType = DeviceType.mobile;
-    } else {
-      deviceType = DeviceType.tablet;
-    }
   }
 }
-
-/// Type of Device
-///
-/// This can be either mobile or tablet
-enum DeviceType { mobile, tablet, web, mac, windows, linux, fuchsia }

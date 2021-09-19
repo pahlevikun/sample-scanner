@@ -12,9 +12,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => Injector.instance<HomeBloc>()..add(HomeInit()),
-      child: HomeView(),
+    return Scaffold(
+      body: BlocProvider(
+        create: (context) => Injector.instance<HomeBloc>()..add(HomeInit()),
+        child: HomeView(),
+      ),
     );
   }
 }

@@ -15,7 +15,7 @@ mixin _HomeDispatcher {
   Future<dynamic> goToForm(BuildContext context) async {
     return _router.navigateTo(
       context,
-      PathIdentifiers.HOME,
+      PathIdentifiers.FORM,
       clearStack: true,
       transition: TransitionType.native,
     );

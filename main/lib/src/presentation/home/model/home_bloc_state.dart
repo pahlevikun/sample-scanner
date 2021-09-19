@@ -5,4 +5,5 @@ part 'home_bloc_state.freezed.dart';
 @freezed
 abstract class HomeBlocState with _$HomeBlocState {
   const factory HomeBlocState.pure() = Pure;
+  const factory HomeBlocState.goToForm() = GoToForm;
 }

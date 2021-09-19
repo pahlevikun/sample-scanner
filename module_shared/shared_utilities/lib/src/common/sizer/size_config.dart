@@ -1,5 +1,7 @@
 import 'package:flutter/widgets.dart';
-import 'package:shared_utilities/src/common/sizer2/sizer.dart';
+
+part 'widget.dart';
+part 'util.dart';
 
 class SizeConfigBuilder extends StatelessWidget {
   const SizeConfigBuilder({Key? key, required this.builder}) : super(key: key);
@@ -13,7 +15,7 @@ class SizeConfigBuilder extends StatelessWidget {
       return OrientationBuilder(builder: (context, orientation) {
         SizerUtil.setScreenSize(constraints, orientation);
         SizeConfig().init(context, constraints, orientation);
-        return builder(context, orientation, SizerUtil.deviceType);
+        return builder(context, orientation);
       });
     });
   }
@@ -109,15 +111,15 @@ class SizeConfig {
   @Deprecated(
       "Deprecated, this now become not accurate, please use SizeConfigExt")
   double getPercentageHeightSize(double percent) =>
-      percent > 100 || percent < 0 ? 0 : _screenHeight * (percent / 100);
+      percent > 100 || percent < 0 ? 0 : percent * _screenHeight / 100;
 
   @Deprecated(
       "Deprecated, this now become not accurate, please use SizeConfigExt")
   double getPercentageWidthSize(double percent) =>
-      percent > 100 || percent < 0 ? 0 : _screenWidth * percent;
+      percent > 100 || percent < 0 ? 0 : percent * _screenWidth / 100;
 
   double getPercentageFontSize(double percent) {
-    return _screenWidth / 100 * (percent / 3);
+    return percent * (_screenWidth / 3) / 100;
   }
 
   DeviceType getDeviceType() => _deviceType;
